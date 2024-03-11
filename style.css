@@ -140,7 +140,8 @@ aside button.close {
     display: block;
 }
 
-.wrapper {
+/* COOKIES */
+.wrapper { 
     position: fixed;
     left: 0;
     width: 100%;
