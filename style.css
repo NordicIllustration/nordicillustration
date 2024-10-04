@@ -26,23 +26,94 @@ body {
 }
 
 header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 5px 20px;
     position: absolute;
     left: 0;
     z-index: 2;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
     transition: 0.6s;
-    background-color: rgba(0, 12, 42, 0.7); /* Use RGBA color format */
 }
 
-header.active {
-    background: linear-gradient(90deg, #003eff, #0069ff);
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
+.logo {
+    height: auto;
+    width: 120px;
+}
+
+.globe-icon-container {
+    padding: 15px; 
+    border-radius: 5px; 
+}
+
+.globe-icon {
+    height: 30px;
+    width: 30px;
+    fill: white;
+    transition: all 0.3s ease; 
+}
+
+.globe-icon:hover {
+    background-color: rgba(219, 219, 219, 0.14);
+}
+
+.globe-icon:hover path {
+    fill: white; 
+}
+
+
+nav.center.desktop {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    flex: 1; 
+}
+
+
+nav.right-desktop {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+nav a {
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: normal;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0 10px; 
+}
+
+nav a:hover {
+    background-color: rgba(219, 219, 219, 0.14);
+    border-radius: 3px;
+    padding: 5px 10px; 
+}
+
+
+#menuBtn {
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: normal;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 20px; 
+}
+
+#menuBtn:hover {
+    background-color: rgba(219, 219, 219, 0.14);
+    padding: 5px 10px; 
+    border-radius: 3px;
+}
 .away {
     max-width: 70%;
     margin-left: 80px;
@@ -50,44 +121,6 @@ header.active {
     display: block;
     cursor: pointer;
 }
-
-a.logo {
-    height: 100px;
-    width: 150px;
-    color: rgba(255, 255, 255, 1); /* Set text color with full opacity */
-}
-
-header a {
-    color: rgba(255, 255, 255, 1); /* Set text color with full opacity */
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: normal;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: rgba(219, 219, 219, 0.14);
-    padding: 5px 14px;
-    border-radius: 3px;
-}
-
-header nav a {
-    text-decoration: none;
-    padding: 2px 18px;
-    transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-header nav.center {
-    text-align: center;
-    margin-top: 10px;
-}
-
-header nav.right {
-    text-align: right;
-}
-
-
 aside {
     position: fixed;
     right: -320px;
@@ -143,7 +176,7 @@ aside button.close {
 /* COOKIES */
 .wrapper { 
     position: fixed;
-    left: 0;
+    right: 0;
     width: 100%;
     bottom: 0px;
     display: grid;
@@ -181,17 +214,17 @@ aside button.close {
 
 .cookiesbuttons button {
     background-color: rgba(0, 0, 0, 0.05);
-    border: none; /* Remove border */
+    border: 3px solid transparent;
+    transition: border-color 0.33s ease 0s, background-color 0.33s ease 0s, color 0.33s ease 0s, box-shadow 0.25s ease 0s;
     border-radius: 4px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
-    padding: 4px 24px;
+    padding: 6px 24px;
     text-align: center;
     text-transform: inherit;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition effect */
     min-width: 137px;
-    color: #393C41; /* Change button text color */
+    color: #6b6d70; /* Change button text color */
 }
 
 .cookiesbuttons button:hover {
@@ -203,9 +236,9 @@ aside button.close {
     width: 10px; /* Add space between buttons */
 }
 
-.cookiescontent p   {
-font-size: 14px;
-padding: 0 0 14px;
+.cookiescontent p a {
+    color: #393C41; /* Change link text color */
+    text-decoration: underline; /* Remove underline */
 }
 
 section {
@@ -241,22 +274,24 @@ section a {
 
 section .buttons a {
     display: block;
-    background-color: rgba(255, 255, 255, 0.427);
+    background-color: transparent;
     color: #e9e9eb;
-    padding: 14px 60px;
-    border-radius: 20px;
+    padding: 14px 90px;
+    border-radius: 4px;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
+    border: #fff solid;
+    transition: color 0.5s, background-color 0.5s, padding 0.5s; /* Add transition properties */
 }
 
 section .buttons a:hover {
-    transition: 0.7s;
     color: #171a20;
-    background-color: rgba(255, 255, 255, 0.741);
+    background-color: rgba(255, 255, 255, 1);
     padding: 13px 52px;
 }
+
 
 section .buttons {
     margin: 0 40px;
